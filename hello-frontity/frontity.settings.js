@@ -1,0 +1,62 @@
+const settings = {
+  "name": "hello-frontity",
+  "state": {
+    "frontity": {
+      "url": "https://test.frontity.org",
+      "title": "Test Frontity Blog",
+      "description": "WordPress installation for Frontity development"
+    }
+  },
+  "packages": [
+    {
+      "name": "my-first-theme"
+    },
+    {
+      "name": "@frontity/wp-source",
+      "state": {
+        "source": {
+          "url": "https://test.frontity.org",
+          "postTypes": [
+            {
+              type: "destinations",
+              endpoint: "destinations",
+              archive: "/destinations"
+            }
+          ]
+        },
+        theme: {
+          isUrlVisible: true,
+          css: {
+            colors: {
+              white: "#FFF",
+              red: "#C60C30",
+              blue: "#002F5F",
+              heading: "#31639E",
+              text: "#1B3257",
+              light: "#b7cbe2",
+              accent: "rgb(255,217,17)",
+
+            }
+          },
+          social: [
+            ["Contact Us", "mail", "/contact/"],
+            ["Call Us", "phone", "tel:07764481541"],
+            ["Find Us", "pin", "/find-us/"],
+            ["Facebook", "facebook", "http://facebook.com"],
+            ["Twitter", "twitter","http://twitter.com"]
+          ],
+          menu: [
+            ["Home","/"],
+            ["More posts","/page/2"],
+            ["About Us","/about-us"],
+            ["Destinations","/destinations"],
+          ]
+        }
+      }
+    },
+    "@frontity/tiny-router",
+    "@frontity/html2react"
+  ]
+};
+
+export default settings;
