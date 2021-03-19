@@ -107,7 +107,7 @@ const Button = styled.button`
 `
 
 
-const HeaderMenuBlah = styled(Menu)`
+const HeaderMenu = styled(Menu)`
     display: flex;
     flex-direction: row;
     list-style: none;
