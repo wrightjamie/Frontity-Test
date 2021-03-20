@@ -54,6 +54,7 @@ const Root = ({ state }) => {
                     <Post when={data.isPost} />
                     <Post when={data.isPage} />
                     <Post when={data.isDestinations} />
+                    <Author when={data.isAuthor} />
                     <Error when={data.isError} />
                 </Switch>
             </Main>

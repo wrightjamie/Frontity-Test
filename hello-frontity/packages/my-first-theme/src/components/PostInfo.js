@@ -17,7 +17,7 @@ const PostInfo = ({ state  }) => {
                 <strong>Author: </strong>
                 {author.name}
             </p>
-        </Info>
+       </Info>
     )
 }
 
