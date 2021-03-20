@@ -50,6 +50,15 @@ const settings = {
             ["More posts","/page/2"],
             ["About Us","/about-us"],
             ["Destinations","/destinations"],
+          ],
+          external: [
+            ["Royal Air Force", "http://raf.mod.uk/"],
+            ["RAF Air Cadets", "http://raf.mod.uk/aircadets"],
+            ["North Region", "http://raf.mod.uk/aircadets"],
+          ],
+          useful: [
+            ["Cadet Portal", "http://cadets.bader.mod.uk"],
+            ["Ultilearn", "http://learning.bader.mod.uk"],
           ]
         }
       }

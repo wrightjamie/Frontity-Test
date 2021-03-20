@@ -1,5 +1,5 @@
 import React from "react"
-import { connect, styled , Head} from "frontity"
+import { connect, Head} from "frontity"
 import PostInfo from "./PostInfo"
 import FeaturedMedia from "./featured_media";
 

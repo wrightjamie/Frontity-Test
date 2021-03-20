@@ -13,7 +13,6 @@ const Search = ({ state, libraries, actions }) => {
 
     // Keep a reference to the input so we can grab it's value on form submission
     const inputRef = useRef();
-    const containerRef = useRef();
 
     // Format the query to remove trailing spaces and replace space with "+"
     const formatQuery = query =>

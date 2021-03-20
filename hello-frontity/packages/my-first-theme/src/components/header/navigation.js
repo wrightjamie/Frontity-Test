@@ -1,5 +1,5 @@
 import React from "react"
-import { connect, styled , css } from "frontity"
+import { connect, styled } from "frontity"
 import SocialLinks from "./socialLinks";
 import Menu from "./menu"
 
@@ -21,7 +21,7 @@ const Navigation = ({ state , actions}) => {
                 <MenuContainer
                     onClick={closeModals}
                 >
-                    <Menu
+                    <HeaderMenu
                         data={state.theme.menu}
                     />
                     <HeaderSocialLinks />

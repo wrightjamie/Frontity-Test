@@ -1,12 +1,11 @@
 import dayjs from "dayjs";
 import {connect, styled} from "frontity";
 
-const PostInfo = ({ state, libraries }) => {
+const PostInfo = ({ state  }) => {
     const data = state.source.get(state.router.link)
     const post = state.source[data.type][data.id]
     const author = state.source.author[post.author]
     const formattedDate = dayjs(post.date).format("DD MMM YYYY")
-    const Html2React = libraries.html2react.Component
 
     return (
         <Info>

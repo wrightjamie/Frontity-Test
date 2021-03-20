@@ -1,4 +1,4 @@
-import {connect, styled} from "frontity";
+import {connect } from "frontity";
 import Icon from "./icon";
 
 const FacebookIcon =({ state }) => {

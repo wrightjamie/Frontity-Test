@@ -11,7 +11,8 @@ const Footer = ({ state }) => {
                 <FooterContainer>
                     <SocialLinks />
                     <Menu data={state.theme.menu} />
-                    <Menu data={state.theme.menu} />
+                    <Menu data={state.theme.external} />
+                    <Menu data={state.theme.useful} />
                     <div>
                         RAF AC 2021
                     </div>
