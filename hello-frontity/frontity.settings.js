@@ -2,7 +2,7 @@ const settings = {
   "name": "hello-frontity",
   "state": {
     "frontity": {
-      "url": "http://localhost/wordpress/",
+      "url": "http://localhost/wordpress/wp-json",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -15,14 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://localhost/wordpress/",
-          "postTypes": [
-            {
-              type: "destinations",
-              endpoint: "destinations",
-              archive: "/destinations"
-            }
-          ]
+          "url": "http://localhost/wordpress/wp-json",
         },
         theme: {
           isUrlVisible: true,
