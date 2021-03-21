@@ -2,7 +2,7 @@ const settings = {
   "name": "hello-frontity",
   "state": {
     "frontity": {
-      "url": "http://192.168.0.6/wordpress",
+      "url": "http://localhost/wordpress/",
       "title": "Test Frontity Blog",
       "description": "WordPress installation for Frontity development"
     }
@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://192.168.0.6/wordpress",
+          "url": "http://localhost/wordpress/",
           "postTypes": [
             {
               type: "destinations",
