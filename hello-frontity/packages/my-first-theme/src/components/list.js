@@ -1,6 +1,7 @@
 import React from "react"
 import { connect, styled } from "frontity"
 import Link from "@frontity/components/link"
+import Card from "./cards/card";
 import SearchResults from "./search_results"
 
 const List = ({ state , actions, libraries }) => {
@@ -10,21 +11,21 @@ const List = ({ state , actions, libraries }) => {
     return(
         <>
             {data.isSearch ? <SearchResults /> : null}
-            <Items>
                 {data.items.map((item) => {
                     const post = state.source[item.type][item.id]
                     return (
-                        <Excerpt
+                        <Teaser
                             colour={data.isDestinationsArchive ? "blue" : "green"}
                             key={item.id}>
                             <Link link={post.link}>
-                                {post.title.rendered}
+                                <h1>{post.title.rendered}</h1>
                             </Link>
-                            <Html2React html={post.excerpt.rendered} />
-                        </ Excerpt>
+                            <section>
+                                <Html2React html={post.excerpt.rendered} />
+                            </section>
+                        </ Teaser>
                     )
                 })}
-            </Items>
             <PrevNextNav>
                 {data.previous && (
                     <button
@@ -51,22 +52,8 @@ const List = ({ state , actions, libraries }) => {
 
 export default connect(List)
 
-const Excerpt = styled.div`
-    display:block;
-    background: ${props => props.colour || "yellow"};
-    `
-
-const Items = styled.div`
-    &>a{
-        display: block;
-        margin: 6px 0;
-        font-size: 1.2em;
-        color: steelblue;
-        text-decoration: none;
-    }
-`
-
 const PrevNextNav = styled.div`
+    grid-column: span 1;
     padding-top:1.5em;
     
     & > button {
@@ -81,4 +68,49 @@ const PrevNextNav = styled.div`
     & > button:hover {
        cursor: pointer;
     }
+`
+
+const Teaser = styled(Card)`
+  height: 25em;
+    img {
+      transition: all 1s ease-in-out;
+      width:100%; height: 100%;
+      object-fit: cover;
+    }
+  
+    a{
+      transition: background-color 2s ease;
+      background-color: var(--light);
+      position:absolute;
+      bottom:0;
+      display: block;
+      padding: 0 5px;
+    }
+  
+      h1{
+        color: var(--text);
+      }
+      
+      section {
+          transition: all 1s ease-in-out;
+          max-height: 0;
+          overflow: hidden;
+      }
+
+    &:hover{
+        img{
+          transform: scale(1.05);}
+        a{
+          background-color: var(--blue);
+        }
+        
+        section{
+          max-height:5rem;
+        }
+        h1{
+          text-decoration: underline;
+          color: var(--header);
+        }
+  }
+
 `

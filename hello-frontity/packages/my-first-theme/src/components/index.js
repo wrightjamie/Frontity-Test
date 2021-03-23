@@ -70,6 +70,9 @@ max-width: 800px;
 padding: 10em 1em 1em;
 transition: padding-top .2s ease-in-out;
 margin: auto;
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  grid-gap: 1em;
 
 ${mq[0]} {
     padding-top:6em;
