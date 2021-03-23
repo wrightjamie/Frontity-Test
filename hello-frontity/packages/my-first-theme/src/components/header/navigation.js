@@ -3,6 +3,7 @@ import { connect, styled } from "frontity"
 import SocialLinks from "./socialLinks";
 import Menu from "./menu"
 
+import underline from "./underline";
 import mq from "../mq"
 import Icon from "../icons/icon";
 
@@ -108,6 +109,8 @@ const Button = styled.button`
 
 
 const HeaderMenu = styled(Menu)`
+    --color: var(--light);
+  
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -115,10 +118,12 @@ const HeaderMenu = styled(Menu)`
     li {
         border-right: 2px  var(--heading) solid;
         padding: 0 .5em;
+        &:first-of-type { padding-left: 0; }
+        &:last-of-type { border: none; }
+        
+        ${underline}
     }
 
-    :first-child { padding-left: 0; }
-    :last-child { border: none; }
 
     a {
         color: ${(props) => (props.iscurrentpage ? "var(--light)" : "var(--heading)")};
