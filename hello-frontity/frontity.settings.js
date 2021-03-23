@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://localhost/wordpress/wp-json",
+          "api": "http://localhost/wordpress/wp-json",
         },
         theme: {
           isUrlVisible: true,
