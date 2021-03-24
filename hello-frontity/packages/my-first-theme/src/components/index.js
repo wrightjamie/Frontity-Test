@@ -4,7 +4,6 @@ import Header from "./header/header"
 import Footer from "./footer/footer";
 import Switch from "@frontity/components/switch"
 
-import Home from "./home"
 import List from "./list"
 import Post from "./post"
 import Loading from "./loading"

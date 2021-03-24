@@ -21,12 +21,12 @@ const settings = {
           isUrlVisible: true,
           css: {
             colors: {
-              white: "#FFF",
-              red: "#C60C30",
-              blue: "#002F5F",
-              heading: "#31639E",
-              text: "#1B3257",
-              light: "#b7cbe2",
+              white: "rgb(255,255,255)",
+              red: "rgb(198,12,48)",
+              blue: "rgb(0,47,95)",
+              heading: "rgb(49,99,158)",
+              text: "rgb(27,50,87)",
+              light: "rgb(183,203,226)",
               accent: "rgb(255,217,17)",
 
             }
