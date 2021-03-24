@@ -2,6 +2,7 @@ import React from "react"
 import { connect, Head} from "frontity"
 import PostInfo from "./PostInfo"
 import FeaturedMedia from "./featured_media";
+import Card from "./cards/card";
 
 const Post = ({ state, libraries }) => {
     const data = state.source.get(state.router.link)
@@ -10,7 +11,7 @@ const Post = ({ state, libraries }) => {
     const Html2React = libraries.html2react.Component
 
     return (
-        <div>
+        <Card>
             <Head>
                 <title>{post.title.rendered}</title>
                 <meta name="description" content={post.excerpt.rendered} />
@@ -22,7 +23,7 @@ const Post = ({ state, libraries }) => {
             {data.isDestinations ? <b>DESTINATION</b> : null }
             {data.isPost ? <PostInfo /> : null }
             <Html2React html={post.content.rendered} />
-        </div>
+        </Card>
     )
 }
 

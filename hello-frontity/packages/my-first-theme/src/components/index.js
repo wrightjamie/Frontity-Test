@@ -32,7 +32,10 @@ const Root = ({ state }) => {
                         box-sizing: border-box;
                     }
                     html {
-                        font-family: system-ui, Verdana, Arial, sans-serif;
+                        font-family: "Roboto Condensed", sans-serif;
+                        font-size: 16px;
+
+                        color: var(--text);
                     }
                     :root{
                         --white: ${colors.white};
@@ -42,6 +45,11 @@ const Root = ({ state }) => {
                         --text: ${colors.text};
                         --light: ${colors.light};
                         --accent: ${colors.accent};
+                        
+                        line-height:1.5;
+                    }
+                    a {
+                        color: inherit;
                     }
                 `}
             />
