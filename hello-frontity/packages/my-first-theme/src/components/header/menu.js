@@ -3,10 +3,10 @@ import { connect } from "frontity"
 import Link from "@frontity/components/link"
 
 
-const Menu = ({ state , data}) => {
+const Menu = ({ state , data, className}) => {
 
     return (
-        <ul>
+        <ul className={className}>
             {data.map(([name, link], index) => (
                 <li key={name} >
                     <Link

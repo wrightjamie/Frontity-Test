@@ -4,11 +4,11 @@ import Link from "@frontity/components/link"
 import Icon from "../icons/icon"
 
 
-const SocialLinks = ({ state }) => {
+const SocialLinks = ({ state , className}) => {
 
     return (
         <>
-        <div>
+        <div className={className}>
             {state.theme.social.map(([title, type, link], index) =>(
                 <Link key={index} link={link} title={title}>
                     <Icon icon={type} size="1.5" />
