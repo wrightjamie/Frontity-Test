@@ -61,7 +61,6 @@ const Root = ({ state }) => {
                     <List when={data.isArchive} />
                     <Post when={data.isPost} />
                     <Post when={data.isPage} />
-                    <Post when={data.isDestinations} />
                     <Error when={data.isError} />
                 </Switch>
             </Main>
@@ -87,17 +86,5 @@ ${mq[0]} {
 
 img {
     max-width: 100%;
-}
-h2 {
-    margin: 0.5em 0;
-}
-p {
-    line-height: 1.25em;
-    margin-bottom: 0.75em;
-}
-figcaption {
-    color: #828282;
-    font-size: 0.8em;
-    margin-bottom: 1em;
 }
 `
