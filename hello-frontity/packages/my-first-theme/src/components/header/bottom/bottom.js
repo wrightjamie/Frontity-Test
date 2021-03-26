@@ -8,7 +8,7 @@ import Headroom from "react-headroom/src";
 const Bottom = ({ state , actions }) => {
 
     const { bottom } = state.theme;
-    const { hideBottom, showBottom , pinBottomToggle} = actions.theme;
+    const { hide, show , pinToggle, autoShow, autoHide} = actions.theme.bottom;
     return (
         <>
         <BottomContainer
@@ -16,8 +16,8 @@ const Bottom = ({ state , actions }) => {
         >
             <Div
                 disableInlineStyles
-                onPin={showBottom}
-                onUnpin={hideBottom}
+                onPin={autoShow}
+                onUnpin={autoHide}
                 style={{
                     maxWidth: '800px',
                     margin: 'auto',
@@ -34,13 +34,13 @@ const Bottom = ({ state , actions }) => {
                 </StyledLink>
             ))}
             <Controls>
-                <Button onClick={pinBottomToggle} ><Icon icon="pushpin" size="2" /></Button>
-                <Button onClick={hideBottom} ><Icon icon="arrowDown" size="2" /></Button>
+                <Button onClick={pinToggle} data-pinned={bottom.pinned} ><Icon icon="pushpin" size="1.5" /></Button>
+                <Button onClick={hide} ><Icon icon="arrowDown" size="1.5" /></Button>
             </Controls>
             </Div>
         </BottomContainer>
         <ShowBottom >
-            <Button onClick={showBottom} ><Icon icon="arrowUp" size="2"/></Button>
+            <ClearButton onClick={show} ><Icon icon="arrowUp" size="2"/></ClearButton>
         </ShowBottom>
         </>
     )
@@ -112,4 +112,22 @@ const ShowBottom = styled.div`
 `
 
 const Button = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  padding: .5rem;
+  border-radius: .25rem;
+  outline: none;
+  
+  &:hover {
+    background: var(--light);
+  }
+  [data-hidden="false"] &[data-pinned="true"] {
+    color:var(--red);
+  }
+`
+
+const ClearButton = styled(Button)`
+  &:hover { background: none; }
 `

@@ -104,17 +104,26 @@ const myFirstTheme = {
   },
   actions: {
     theme: {
-      pinBottomToggle: ({state}) => {
-        state.theme.bottom.pinned = !state.theme.bottom.pinned;
-        console.log('toggle');
-      },
-      hideBottom: ({state}) => {
-        console.log('hidden');
-        state.theme.bottom.hidden = true;
-      },
-      showBottom: ({state}) => {
-        console.log('back again');
-        state.theme.bottom.hidden = false;
+      bottom:{
+        pinToggle: ({state}) => {
+          state.theme.bottom.pinned = !state.theme.bottom.pinned;
+          state.theme.bottom.hidden = false;
+        },
+        autoHide: ({state}) => {
+          !state.theme.bottom.pinned ? state.theme.bottom.hidden = true : null;
+        },
+        autoShow: ({state}) => {
+          !state.theme.bottom.pinned ? state.theme.bottom.hidden = false : null;
+        },
+        hide: ({state}) => {
+          state.theme.bottom.pinned = true;
+          state.theme.bottom.hidden = true;
+        },
+        show: ({state}) => {
+          state.theme.bottom.hidden = false;
+          state.theme.bottom.pinned = false;
+        },
+
       },
     closeModals: ({state}) => {
         state.theme.isSearchModalOpen = false;
