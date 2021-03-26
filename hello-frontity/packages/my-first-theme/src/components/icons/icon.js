@@ -18,7 +18,9 @@ const Icon = ({
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <path fill={color} d={path} />
+            {path.map((d, index) =>(
+                <path key={index} d={d} fill={color} />
+                ))}
         </SVG>
     )
 }

@@ -4,6 +4,7 @@ import Search from "./search"
 import RAFroundel from "./rafroundel";
 import TitlesSection from "./titlessection";
 import Navigation from "./navigation";
+import Bottom from "./bottom/bottom";
 
 import mq from "../mq"
 import overlay from "./overlay";
@@ -32,6 +33,7 @@ const Header = ({ state , actions}) => {
                     <Navigation />
                 </HeaderContent>
             </HeaderBox>
+            <Bottom />
         </>
     )
 }

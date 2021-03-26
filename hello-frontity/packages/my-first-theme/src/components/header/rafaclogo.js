@@ -2,6 +2,8 @@ import React from "react"
 import { connect, css } from "frontity"
 import mq from "../mq"
 
+//TODO take icon from Localhost version
+
 const RAFAClogo = ({
 
                    }) => {
