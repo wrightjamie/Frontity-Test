@@ -13,6 +13,7 @@ const myFirstTheme = {
       bottom: {
         pinned: true,
         hidden: false,
+        search: false
       },
       social: [],
       menu: [],
