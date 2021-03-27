@@ -11,9 +11,9 @@ const Footer = ({ state }) => {
             <Div>
                 <FooterContainer>
                     <FooterSocialLinks />
-                    <FooterMenu data={state.theme.menu} />
-                    <FooterMenu data={state.theme.external} />
-                    <FooterMenu data={state.theme.useful} />
+                    <FooterMenu data={state.theme.menus.menu} />
+                    <FooterMenu data={state.theme.menus.external} />
+                    <FooterMenu data={state.theme.menus.useful} />
 
                 </FooterContainer>
             </Div>

@@ -8,15 +8,23 @@ const myFirstTheme = {
   },
   state: {
     theme: {
+      modals: {
+        search: true,
+        social: true,
+      },
       isSearchModalOpen: false,
       isMenuModalOpen: false,
       bottom: {
-        pinned: true,
+        pinned: false,
         hidden: false,
-        search: false
+        search: false,
+        overlay: false,
       },
-      social: [],
-      menu: [],
+      menus:{
+        social: [],
+        menu: [],
+        bottomLinks: [],
+      },
       icons: {
         arrowDown: {
           viewBox: "0 0 32 32",
@@ -124,9 +132,19 @@ const myFirstTheme = {
           state.theme.bottom.hidden = false;
           state.theme.bottom.pinned = false;
         },
+        searchToggle: ({ state }) => {
+          state.theme.bottom.search = !state.theme.bottom.search;
+          state.theme.bottom.overlay = state.theme.bottom.search;
+        },
+        searchHide: ({ state }) => {
+          state.theme.bottom.search = false;
+          state.theme.bottom.overlay = false;
+        }
 
       },
     closeModals: ({state}) => {
+
+        Object.keys(state.theme.modals).forEach(v => state.theme.modals[v] = false)
         state.theme.isSearchModalOpen = false;
         state.theme.isMenuModalOpen = false;
       },

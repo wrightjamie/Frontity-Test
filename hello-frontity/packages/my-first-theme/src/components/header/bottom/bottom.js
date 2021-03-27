@@ -9,11 +9,12 @@ import overlay from "../overlay";
 const Bottom = ({ state , actions }) => {
 
     const { bottom } = state.theme;
-    const { hide, show , pinToggle, autoShow, autoHide} = actions.theme.bottom;
+    const { hide, show , pinToggle, autoShow, autoHide, searchToggle, searchHide } = actions.theme.bottom;
     return (
         <>
         <BottomContainer
             data-hidden={bottom.hidden}
+            data-searchopen={bottom.search}
         >
             <Div
                 disableInlineStyles
@@ -28,15 +29,19 @@ const Bottom = ({ state , actions }) => {
                     height:'5rem'
                 }}
             >
-            {state.theme.social.map(([title, type, link], index) =>(
+            {state.theme.menus.bottomLinks.map(([title, type, link], index) =>(
                 <StyledLink key={index} link={link} title={title}>
                     <Icon icon={type} size="2" />
                     <div>{title}</div>
                 </StyledLink>
             ))}
-            <Button title="search">
+            <Button title="Social" onClick={searchToggle}>
+                <Icon icon="share" size="2" />
+                <div>Share</div>
+            </Button>
+            <Button title="search" onClick={searchToggle}>
                 <Icon icon="search" size="2" />
-                <div>search</div>
+                <div>Search</div>
             </Button>
 
             <Controls>
@@ -49,8 +54,9 @@ const Bottom = ({ state , actions }) => {
         <ShowBottom >
             <ClearButton onClick={show} ><Icon icon="arrowUp" size="2"/></ClearButton>
         </ShowBottom>
-        <Search data-open={bottom.search}/>
-        <Overlay data-open={bottom.overlay}/>
+        <Search />
+        <Social />
+        <Overlay data-open={bottom.overlay} onClick={searchHide} />
         </>
     )
 }
@@ -142,21 +148,25 @@ const Button = styled.button`
 const ClearButton = styled(Button)`
   &:hover { background: none; }
 `
-//TODO Logic here isn't right.
+
+
 const Search = styled.div`
   position:fixed;
-  z-index: 50;
+  z-index: 80;
   left: 0; bottom: 0rem;
   transition: transform .5s ease-in-out;
+  transform: translateY(5rem);
   height: 5rem;
   width: 100%;
   background: var(--light);
   [data-hidden="false"] ~ &{
     transform: translateY(0rem);
   }
-  [data-hidden="false"] ~  &[data-open="true"]{
+  [data-hidden="false"][data-searchopen="true"] ~  &{
     transform: translateY(-5rem);
   }
 `
+
+const Social = styled(Search)``
 
 const Overlay = styled.div`${overlay}`

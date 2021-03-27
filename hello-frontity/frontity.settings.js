@@ -34,28 +34,32 @@ const settings = {
 
             }
           },
-          social: [
-            ["Contact Us", "mail", "/contact/"],
-            ["Call Us", "phone", "tel:07764481541"],
-            ["Find Us", "pin", "/find-us/"],
-            ["Facebook", "facebook", "http://facebook.com"],
-            ["Twitter", "twitter","http://twitter.com"]
-          ],
-          menu: [
-            ["Home","/"],
-            ["More posts","/page/2"],
-            ["About Us","/about-us"],
-            ["Destinations","/destinations"],
-          ],
-          external: [
-            ["Royal Air Force", "http://raf.mod.uk/"],
-            ["RAF Air Cadets", "http://raf.mod.uk/aircadets"],
-            ["North Region", "http://raf.mod.uk/aircadets"],
-          ],
-          useful: [
-            ["Cadet Portal", "http://cadets.bader.mod.uk"],
-            ["Ultilearn", "http://learning.bader.mod.uk"],
-          ]
+          menus: {
+            bottomLinks: [
+              ["Call Us", "phone", "tel:07764481541"],
+              ["Find Us", "pin", "/find-us/"],
+            ],
+            social: [
+              ["Contact Us", "mail", "/contact/"],
+              ["Facebook", "facebook", "http://facebook.com"],
+              ["Twitter", "twitter", "http://twitter.com"]
+            ],
+            menu: [
+              ["Home", "/"],
+              ["More posts", "/page/2"],
+              ["About Us", "/about-us"],
+              ["Destinations", "/destinations"],
+            ],
+            external: [
+              ["Royal Air Force", "http://raf.mod.uk/"],
+              ["RAF Air Cadets", "http://raf.mod.uk/aircadets"],
+              ["North Region", "http://raf.mod.uk/aircadets"],
+            ],
+            useful: [
+              ["Cadet Portal", "http://cadets.bader.mod.uk"],
+              ["Ultilearn", "http://learning.bader.mod.uk"],
+            ]
+          }
         }
       }
     },

@@ -9,7 +9,7 @@ const SocialLinks = ({ state , className}) => {
     return (
         <>
         <div className={className}>
-            {state.theme.social.map(([title, type, link], index) =>(
+            {state.theme.menus.social.map(([title, type, link], index) =>(
                 <Link key={index} link={link} title={title}>
                     <Icon icon={type} size="1.5" />
                 </Link>

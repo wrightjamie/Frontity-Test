@@ -23,7 +23,7 @@ const Navigation = ({ state , actions}) => {
                     onClick={closeModals}
                 >
                     <HeaderMenu
-                        data={state.theme.menu}
+                        data={state.theme.menus.menu}
                     />
                     <HeaderSocialLinks />
                 </MenuContainer>
