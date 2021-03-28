@@ -166,11 +166,11 @@ const myFirstTheme = {
         state.theme.isSearchModalOpen = true;
       },
       closeMenuModal: ({state}) => {
-        state.theme.isMenuModalOpen = false;
+        state.theme.modals.menu = false;
       },
       openMenuModal: ({state}) => {
         state.theme.isSearchModalOpen = false;
-        state.theme.isMenuModalOpen = true;
+        state.theme.modals.menu = true;
       },
     }
   },

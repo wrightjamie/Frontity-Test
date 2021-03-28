@@ -12,19 +12,19 @@ import overlay from "./overlay";
 
 const Header = ({ state , actions}) => {
     const data = state.source.get(state.router.link);
-    const { isMenuModalOpen , isSearchModalOpen } = state.theme;
-    const { closeModals } = actions.theme;
+    const { modals , isSearchModalOpen } = state.theme;
+    const { closeModals } = actions.theme
+
 
     return (
-        <>
+        <header data-modals={Object.keys(modals).reduce((acc,val) =>acc + (modals[val]? `${val} ` : '') ,'').trim()}>
             <Overlay
-                data-open={isMenuModalOpen || isSearchModalOpen}
                 onClick={closeModals}
             />
             <HeaderBox
                 isPostType={data.isPostType}
                 isPage={data.isPage}
-                data-open={isMenuModalOpen}
+                data-open={modals.menu}
             >
                 <Search />
                 <RAFroundel />
@@ -34,13 +34,13 @@ const Header = ({ state , actions}) => {
                 </HeaderContent>
             </HeaderBox>
             <Bottom />
-        </>
+        </header>
     )
 }
 
 export default connect(Header)
 
-const HeaderBox = styled.header`
+const HeaderBox = styled.div`
     z-index: 100;
     width:100%;
     position:fixed;

@@ -17,7 +17,6 @@ const Navigation = ({ state , actions}) => {
         <>
             <HeaderNav
                 data-open={menu}
-
             >
                 <MenuContainer
                     onClick={closeModals}
