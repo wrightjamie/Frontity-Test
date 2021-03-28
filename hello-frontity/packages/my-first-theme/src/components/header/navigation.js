@@ -10,13 +10,13 @@ import Icon from "../icons/icon";
 
 
 const Navigation = ({ state , actions}) => {
-    const { isMenuModalOpen } = state.theme;
+    const { menu } = state.theme.modals;
     const { closeModals, openSearchModal, openMenuModal, closeMenuModal } = actions.theme;
 
     return (
         <>
             <HeaderNav
-                data-open={isMenuModalOpen}
+                data-open={menu}
 
             >
                 <MenuContainer

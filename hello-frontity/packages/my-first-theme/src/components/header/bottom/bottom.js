@@ -8,13 +8,13 @@ import overlay from "../overlay";
 
 const Bottom = ({ state , actions }) => {
 
-    const { bottom } = state.theme;
+    const { bottom , modals } = state.theme;
     const { hide, show , pinToggle, autoShow, autoHide, searchToggle, searchHide } = actions.theme.bottom;
     return (
         <>
         <BottomContainer
             data-hidden={bottom.hidden}
-            data-searchopen={bottom.search}
+            data-searchopen={modals.search}
         >
             <Div
                 disableInlineStyles
@@ -35,10 +35,6 @@ const Bottom = ({ state , actions }) => {
                     <div>{title}</div>
                 </StyledLink>
             ))}
-            <Button title="Social" onClick={searchToggle}>
-                <Icon icon="share" size="2" />
-                <div>Share</div>
-            </Button>
             <Button title="search" onClick={searchToggle}>
                 <Icon icon="search" size="2" />
                 <div>Search</div>
@@ -55,7 +51,6 @@ const Bottom = ({ state , actions }) => {
             <ClearButton onClick={show} ><Icon icon="arrowUp" size="2"/></ClearButton>
         </ShowBottom>
         <Search />
-        <Social />
         <Overlay data-open={bottom.overlay} onClick={searchHide} />
         </>
     )
@@ -166,7 +161,5 @@ const Search = styled.div`
     transform: translateY(-5rem);
   }
 `
-
-const Social = styled(Search)``
 
 const Overlay = styled.div`${overlay}`

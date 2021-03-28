@@ -38,11 +38,12 @@ const settings = {
             bottomLinks: [
               ["Call Us", "phone", "tel:07764481541"],
               ["Find Us", "pin", "/find-us/"],
+              ["Join Us", "people", "/join-us/"]
             ],
             social: [
               ["Contact Us", "mail", "/contact/"],
               ["Facebook", "facebook", "http://facebook.com"],
-              ["Twitter", "twitter", "http://twitter.com"]
+              ["Twitter", "twitter", "http://twitter.com"],
             ],
             menu: [
               ["Home", "/"],
