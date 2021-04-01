@@ -51,7 +51,6 @@ const Bottom = ({ state , actions }) => {
             <ClearButton onClick={show} ><Icon icon="arrowUp" size="2"/></ClearButton>
         </ShowBottom>
         <Search />
-        <Overlay data-open={bottom.overlay} onClick={searchHide} />
         </>
     )
 }

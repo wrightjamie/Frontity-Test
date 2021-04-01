@@ -24,7 +24,6 @@ const Header = ({ state , actions}) => {
             <HeaderBox
                 isPostType={data.isPostType}
                 isPage={data.isPage}
-                data-open={modals.menu}
             >
                 <Search />
                 <RAFroundel />
@@ -52,7 +51,7 @@ const HeaderBox = styled.div`
         height:5em;
         transition: height .5s ease-in-out;
         overflow-y: hidden;
-        &[data-open="true"] {
+        [data-modals~="menu"] & {
             height: 80vh;
         }
     }

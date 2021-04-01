@@ -155,18 +155,10 @@ const myFirstTheme = {
     closeModals: ({state}) => {
 
         Object.keys(state.theme.modals).forEach(v => state.theme.modals[v] = false)
-        state.theme.isSearchModalOpen = false;
-        state.theme.isMenuModalOpen = false;
-      },
-      closeSearchModal: ({state}) => {
-        state.theme.isSearchModalOpen = false;
       },
       openSearchModal: ({state}) => {
         state.theme.isMenuModalOpen = false;
         state.theme.isSearchModalOpen = true;
-      },
-      closeMenuModal: ({state}) => {
-        state.theme.modals.menu = false;
       },
       openMenuModal: ({state}) => {
         state.theme.isSearchModalOpen = false;

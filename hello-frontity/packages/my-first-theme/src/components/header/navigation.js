@@ -9,26 +9,21 @@ import Icon from "../icons/icon";
 
 
 
-const Navigation = ({ state , actions}) => {
-    const { menu } = state.theme.modals;
-    const { closeModals, openSearchModal, openMenuModal, closeMenuModal } = actions.theme;
+const Navigation = ({ actions , state}) => {
+    const { closeModals, openSearchModal, openMenuModal } = actions.theme;
 
     return (
         <>
-            <HeaderNav
-                data-open={menu}
-            >
+            <HeaderNav>
                 <MenuContainer
                     onClick={closeModals}
                 >
-                    <HeaderMenu
-                        data={state.theme.menus.menu}
-                    />
+                    <HeaderMenu data={state.theme.menus.menu}/>
                     <HeaderSocialLinks />
                 </MenuContainer>
                 <Button data-type="search" onClick={openSearchModal}><Icon icon="search" size={1.5}/></Button>
                 <Button data-type="menu" onClick={openMenuModal}><Icon icon="menu" size={1.5}/></Button>
-                <Button data-type="close" onClick={closeMenuModal}><Icon icon="cross" size={1.5}/></Button>
+                <Button data-type="close" onClick={closeModals}><Icon icon="cross" size={1.5}/></Button>
             </HeaderNav>
         </>
     )
@@ -46,12 +41,19 @@ margin-bottom: 1em;
     display: none;
 }
 ${mq[0]} {
-    [data-open=false]& [data-type="menu"] {
-        display: block;
+  & [data-type="menu"] {
+    display: block;
+  }
+
+  [data-modals~="menu"] & {
+    [data-type="close"] {
+      display: block;
     }
-    [data-open=true]& [data-type="close"] {
-        display: block;
+
+    [data-type="menu"] {
+      display: none;
     }
+  }
 }
 `
 
@@ -67,15 +69,15 @@ const MenuContainer = styled.div`
         justify-content:center;
 
 
-        transform: scaleY(1);
+        transform: scaleY(0);
         transform-origin: top;
         transition: transform .2s ease-in-out;
 
         font-size: 1.5em;
         padding:0 0 6em 0;
 
-        [data-open="false"] & {
-            transform:scaleY(0);
+        [data-modals~="menu"] & {
+            transform:scaleY(1);
         }
         
         >ul { font-size: 2em; margin-bottom:.5em;}

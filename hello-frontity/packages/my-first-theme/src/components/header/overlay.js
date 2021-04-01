@@ -10,7 +10,7 @@ const overlay = `
   width: 100%;
   z-index: 50;
 
-  [data-modals] &{
+  [data-modals]:not([data-modals=""]) &{
     display: block;
     opacity: 1;
     left: 0;
