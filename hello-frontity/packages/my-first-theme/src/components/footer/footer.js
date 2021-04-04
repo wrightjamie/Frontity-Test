@@ -58,4 +58,5 @@ const Copyright = styled.div`
     padding: 1em;
     background: var(--light);
     color: var(--text);
+    padding-bottom: 6rem;
     `
