@@ -1,11 +1,11 @@
 import {connect, styled} from "frontity";
 import React, { useRef } from "react";
-import Icon from "../icons/icon";
+import Icon from "../../icons/icon";
 
 const Search = ({ state, libraries, actions }) => {
     // Search modal status and actions
     const { isSearchModalOpen } = state.theme;
-    const { closeSearchModal } = actions.theme;
+    const { closeModals } = actions.theme;
 
     //Get search query
     const parse = libraries.source.parse(state.router.link);
@@ -39,7 +39,7 @@ const Search = ({ state, libraries, actions }) => {
             window.scrollTo(0, 0);
 
             // Close the search modal
-            closeSearchModal();
+            closeModals();
         }
     };
 
@@ -80,7 +80,7 @@ const SearchInput = styled.input`
     }
     &:hover,
     &:focus{
-        box-shadow: inset 0 -5px 10px var(--heading);
+        box-shadow: inset 0 1px 1px var(--heading);
     }
 `
 const SearchSubmit = styled.button`
@@ -101,25 +101,20 @@ const SearchSubmit = styled.button`
 `
 
 const Div = styled.div`
-    position: absolute;
-    top:0; bottom: 0;
-    width: 100%;
-
-    margin: 0 auto;
-    z-index: 2000;
-
-    display: flex;
-    justify-content: center;
-
-    background: var(--blue);
-
-    transform: ScaleY(0);
-    transform-origin: top;
-    transition: transform 1s ease 0s;
-
-    &[data-open="true"] {
-        transform: scaleY(1);
-    }
+  position:fixed;
+  z-index: 80;
+  left: 0; bottom: 0rem;
+  transition: transform .5s ease-in-out;
+  transform: translateY(5rem);
+  height: 5rem;
+  width: 100%;
+  background: var(--light);
+  [data-hidden="false"] ~ &{
+    transform: translateY(0rem);
+  }
+  [data-hidden="false"][data-searchopen="true"] ~  &{
+    transform: translateY(-5rem);
+  }
 `
 
 const SearchForm = styled.form`

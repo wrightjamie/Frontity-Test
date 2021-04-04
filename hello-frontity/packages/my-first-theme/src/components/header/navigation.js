@@ -11,7 +11,7 @@ import Icon from "../icons/icon";
 
 const Navigation = ({ actions , state}) => {
     const { closeModals, openSearchModal, openMenuModal } = actions.theme;
-
+    //TODO use ternary operator to combine menu open and close button. Use operator to change icon type.
     return (
         <>
             <HeaderNav>
@@ -21,7 +21,6 @@ const Navigation = ({ actions , state}) => {
                     <HeaderMenu data={state.theme.menus.menu}/>
                     <HeaderSocialLinks />
                 </MenuContainer>
-                <Button data-type="search" onClick={openSearchModal}><Icon icon="search" size={1.5}/></Button>
                 <Button data-type="menu" onClick={openMenuModal}><Icon icon="menu" size={1.5}/></Button>
                 <Button data-type="close" onClick={closeModals}><Icon icon="cross" size={1.5}/></Button>
             </HeaderNav>

@@ -3,8 +3,7 @@ import { connect , styled } from "frontity"
 import Link from "@frontity/components/link"
 import Icon from "../../icons/icon";
 import Headroom from "react-headroom/src";
-import overlay from "../overlay";
-
+import Search from "./search";
 
 const Bottom = ({ state , actions }) => {
 
@@ -142,23 +141,3 @@ const Button = styled.button`
 const ClearButton = styled(Button)`
   &:hover { background: none; }
 `
-
-
-const Search = styled.div`
-  position:fixed;
-  z-index: 80;
-  left: 0; bottom: 0rem;
-  transition: transform .5s ease-in-out;
-  transform: translateY(5rem);
-  height: 5rem;
-  width: 100%;
-  background: var(--light);
-  [data-hidden="false"] ~ &{
-    transform: translateY(0rem);
-  }
-  [data-hidden="false"][data-searchopen="true"] ~  &{
-    transform: translateY(-5rem);
-  }
-`
-
-const Overlay = styled.div`${overlay}`

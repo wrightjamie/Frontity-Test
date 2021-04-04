@@ -1,6 +1,5 @@
 import React from "react"
 import { connect, styled } from "frontity"
-import Search from "./search"
 import RAFroundel from "./rafroundel";
 import TitlesSection from "./titlessection";
 import Navigation from "./navigation";
@@ -25,7 +24,6 @@ const Header = ({ state , actions}) => {
                 isPostType={data.isPostType}
                 isPage={data.isPage}
             >
-                <Search />
                 <RAFroundel />
                 <HeaderContent>
                     <TitlesSection />
