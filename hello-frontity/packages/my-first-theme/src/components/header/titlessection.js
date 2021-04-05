@@ -12,7 +12,7 @@ const TitlesSection = ({ }) => {
         <>
             <Div>
                 <Titles>
-                    <LinkTitle link="/" css={underline}>
+                    <LinkTitle link="/">
                         <h1>2459<WideTitle> - RAF Air Cadets</WideTitle></h1>
                     </LinkTitle>
                     <SubTitle>Poulton-le-Fylde</SubTitle>
@@ -44,9 +44,14 @@ ${mq[0]} {margin-left: 3em;}
 `
 
 const LinkTitle = styled(Link)`
+  
     color: var(--white);
     text-decoration:none;
     ${mq[0]} {font-size: 1.2em;}
+    --gap: 0rem;
+    --height:.2rem;
+    --color: var(--light);
+    ${underline}
 `
 const WideTitle = styled.span`
     ${mq[0]} {

@@ -126,7 +126,11 @@ const myFirstTheme = {
           state.theme.bottom.hidden = false;
         },
         autoHide: ({state}) => {
-          !state.theme.bottom.pinned ? state.theme.bottom.hidden = true : null;
+          //If search modal is not visible
+          state.theme.modals.search ? null : (
+              // and pinned is not true, then hide
+              !state.theme.bottom.pinned ? state.theme.bottom.hidden = true : null
+          )
         },
         autoShow: ({state}) => {
           !state.theme.bottom.pinned ? state.theme.bottom.hidden = false : null;

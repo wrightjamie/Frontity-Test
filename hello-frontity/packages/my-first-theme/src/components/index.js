@@ -51,6 +51,15 @@ const Root = ({ state }) => {
                     a {
                         color: inherit;
                     }
+                    html,
+                    body,
+                     #root{
+                        height: 100%;
+                    },
+                    #root {
+                      display: flex;
+                      flex-direction: column;
+                    }
                 `}
             />
             <Header />
@@ -72,6 +81,7 @@ const Root = ({ state }) => {
 export default connect(Root)
 
 const Main = styled.main`
+  flex: 1 0 auto;
 max-width: 800px;
 padding: 10em 1em 1em;
 transition: padding-top .2s ease-in-out;

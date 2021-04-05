@@ -109,13 +109,15 @@ const Button = styled.button`
 
 
 const HeaderMenu = styled(Menu)`
-    --color: var(--light);
+
   
     display: flex;
     flex-direction: row;
     list-style: none;
     
     li {
+        color: var(--heading);
+        --color: var(--light);
         border-right: 2px  var(--heading) solid;
         padding: 0 .5em;
         &:first-of-type { padding-left: 0; }
@@ -126,8 +128,6 @@ const HeaderMenu = styled(Menu)`
 
 
     a {
-        color: ${(props) => (props.iscurrentpage ? "var(--light)" : "var(--heading)")};
-        transition: color var(--time, 0.2s) ease-in-out;
         padding: 0;
         text-decoration: none;
     }

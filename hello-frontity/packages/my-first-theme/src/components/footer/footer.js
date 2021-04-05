@@ -29,6 +29,7 @@ export default connect(Footer)
 const Div = styled.div`
     width:100%;
     background-color: var(--blue);
+  flex-shrink: 0;
     `
 
 const FooterContainer = styled.footer`

@@ -1,5 +1,5 @@
 import React from "react"
-import { connect , styled } from "frontity"
+import { connect , styled , css } from "frontity"
 import Link from "@frontity/components/link"
 import Icon from "../../icons/icon";
 import Headroom from "react-headroom/src";
@@ -56,7 +56,18 @@ const Bottom = ({ state , actions }) => {
 
 export default connect(Bottom)
 
-
+const BottomLink = css`
+  padding: .5rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-radius: .25rem;
+  color: var(--heading);
+  &:hover {
+    background: var(--light);
+    text-decoration: underline;
+  }
+`
 
 
 const BottomContainer = styled.div`
@@ -80,19 +91,6 @@ const Div = styled(Headroom)`
 
     `
 
-const StyledLink = styled(Link)`
-  flex: 2 2 0;
-  display:flex;
-  align-items: center;
-  flex-direction: column;
-  color: var(--heading);
-  justify-content: center;
-  text-decoration: none;
-  &:hover{
-    background: var(--light);
-    text-decoration: underline;
-  }
-`
 
 const Controls = styled.div`
   flex: 0 0 auto;
@@ -119,19 +117,22 @@ const ShowBottom = styled.div`
     }
 `
 
+const StyledLink = styled(Link)`
+  ${BottomLink};
+  flex: 2 2 0;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+`
+
 const Button = styled.button`
-  background: none;
-  border: none;
+  ${BottomLink};
   cursor: pointer;
-  color: var(--heading);
-  padding: .5rem;
-  border-radius: .25rem;
   outline: none;
   width:100%; height: 100%;
   flex: 2 2 0;
-  &:hover {
-    background: var(--light);
-  }
+  font-size: 1rem;
   [data-hidden="false"] &[data-pinned="true"] {
     color:var(--red);
   }
@@ -141,3 +142,4 @@ const Button = styled.button`
 const ClearButton = styled(Button)`
   &:hover { background: none; }
 `
+
