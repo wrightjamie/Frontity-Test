@@ -9,7 +9,7 @@ const settings = {
   },
   "packages": [
     {
-      "name": "my-first-theme"
+      "name": "header-refresh"
     },
     {
       "name": "@frontity/wp-source",
