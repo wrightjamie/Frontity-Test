@@ -8,6 +8,17 @@ const myFirstTheme = {
   },
   state: {
     theme: {
+      css: {
+        colors: {
+          white: "rgb(255,255,255)",
+          red: "rgb(198,12,48)",
+          blue: "rgb(0,47,95)",
+          heading: "rgb(49,99,158)",
+          text: "rgb(27,50,87)",
+          light: "rgb(183,203,226)",
+          accent: "rgb(255,217,17)",
+        }
+      },
       enum: {
         topTolerance: 50,
         bottomTolerance: 50,

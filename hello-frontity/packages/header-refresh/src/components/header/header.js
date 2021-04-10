@@ -4,19 +4,11 @@ import Top from "./top/top";
 import Bottom from "./bottom/bottom";
 import SmartHeader from "./smartHeader";
 
-const Header = ({ actions }) => {
+const Header = ({ }) => {
     return (
         <SmartHeader>
             <Top />
             <Bottom />
-            <button
-                onClick={actions.theme.tempHide}
-                css={css`
-                    position: fixed;
-                    top:50%;
-                    left:50%;
-                `}
-            >A Button</button>
         </SmartHeader>
     )
 }

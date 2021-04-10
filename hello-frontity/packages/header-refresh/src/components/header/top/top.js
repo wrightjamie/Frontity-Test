@@ -1,13 +1,16 @@
 import React from "react"
 import { connect , styled } from "frontity";
+import Container from "../../helpers/container"
 
 const Top = (  ) => {
     return (
         <>
             <Div>
-                <h1>I am a header</h1>
-        </Div>
-            </>
+                <Container>
+                    <h1>I am a header</h1>
+                </Container>
+            </Div>
+        </>
     )
 }
 

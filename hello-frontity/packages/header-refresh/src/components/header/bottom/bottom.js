@@ -1,13 +1,16 @@
 import React from "react"
 import { connect , styled } from "frontity";
+import Container from "../../helpers/container"
 
 const Bottom = (  ) => {
     return (
         <>
             <Div>
-                <h1>I am floating bottom</h1>
-        </Div>
-            </>
+                <Container>
+                    <h1>I am floating bottom</h1>
+                </Container>
+            </Div>
+        </>
     )
 }
 
