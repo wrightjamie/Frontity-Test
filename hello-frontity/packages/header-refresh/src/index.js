@@ -15,7 +15,7 @@ const myFirstTheme = {
           PINNED: "pinned",
           TEMP: "temp",
           HIDDEN: "hidden",
-          NONE: "none"
+          AUTO: "auto"
         },
         positionStates: {
           TOP: "top",
@@ -37,7 +37,7 @@ const myFirstTheme = {
         currentPos: null,
         prevPos: null,
         hide: false,
-        pinnedState: "none",
+        pinnedState: "auto",
         scrollDir: "none",
         position: "top"
       },
@@ -142,28 +142,49 @@ const myFirstTheme = {
   actions: {
     theme: {
       scroll: ({ state }) => {
-        console.log("Called")
-        const { pinnedStates , scrollDirStates } = state.theme.enum
+        //console.log("Called")
+        const { pinnedStates , scrollDirStates , positionStates } = state.theme.enum
 
         const pinnedState = state.theme.scroll.pinnedState
         const dir = state.theme.scroll.scrollDir
 
         switch (pinnedState) {
-          case pinnedStates.TEMP:
-            state.theme.scroll.pinnedState = pinnedStates.NONE
+          case pinnedStates.TEMP: //Temporary shown
+            //console.log("TEMP")
+            state.theme.scroll.pinnedState = pinnedStates.AUTO
             state.theme.scroll.hide = false
-          case pinnedStates.HIDDEN:
+            break;
+          case pinnedStates.HIDDEN: //Pinned hide
+            //console.log("HIDDEN")
             state.theme.scroll.hide = true
-          case pinnedStates.PINNED:
+            break;
+          case pinnedStates.PINNED: //Pinned show
+            //console.log("PINNED")
             state.theme.scroll.hide = false
-          case pinnedStates.NONE:
-            state.theme.scroll.hide = ( dir == scrollDirStates.DOWN ? true : false
-            )
+            break;
+          case pinnedStates.AUTO: //Automatic
+            const position = state.theme.scroll.position
+            switch (position) {
+              case positionStates.TOP:
+                //console.log("TOP")
+                state.theme.scroll.hide = false
+                break;
+              case positionStates.BOTTOM:
+                //console.log("BOTTOM")
+                state.theme.scroll.hide = false
+                break;
+              case positionStates.MID:
+                //console.log("MID")
+                state.theme.scroll.hide = ( dir == scrollDirStates.DOWN ? true : false )
+            }
         }
-        console.log(state.theme.scroll.hide)
+        //console.log(state.theme.scroll.hide)
       },
-      tempHide: ({ state }) => {
+
+      tempHide: ({ state, actions }) => {
+        //console.log("temp")
         state.theme.scroll.pinnedState ="temp"
+        actions.theme.scroll()
       }
     },
   },
