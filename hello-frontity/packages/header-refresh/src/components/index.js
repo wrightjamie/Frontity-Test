@@ -6,29 +6,12 @@ import Container from "./helpers/container"
 
 
 const Root = ({ state }) => {
-    const colors = state.theme.css.colors
+    const {colors} = state.theme.css;
+
     return (
         <>
-            <Head>
-                <title>My First Frontity Theme</title>
-                <meta
-                    name="description"
-                    content="Based on the Frontity step by step tutorial"
-                />
-            </Head>
             <Global
                 styles={css`
-                    :root{
-                        --white: ${colors.white};
-                        --red: ${colors.red};
-                        --blue: ${colors.blue};
-                        --heading: ${colors.heading};
-                        --text: ${colors.text};
-                        --light: ${colors.light};
-                        --accent: ${colors.accent};
-                        
-                        line-height:1.5;
-                    }
                     * {
                         margin: 0;
                         padding: 0;
@@ -40,22 +23,28 @@ const Root = ({ state }) => {
 
                         color: var(--text);
                     }
+                    :root{
+                        --dark: ${colors.dark};
+                        --white: ${colors.white};
+                        --red: ${colors.red};
+                        --blue: ${colors.blue};
+                        --heading: ${colors.heading};
+                        --text: ${colors.text};
+                        --light: ${colors.light};
+                        --accent: ${colors.accent};
+                        
+                        line-height:1.5;
+                    }
                     a {
                         color: inherit;
+                        text-decoration: none;
                     }
-                    html,
-                    body,
-                     #root{
-                        height: 100%;
-                    },
                     #root {
                       display: flex;
                       flex-direction: column;
                     }
                 `}
             />
-            <Header />
-
             <Header />
             <Container>
                 <Lorems n={20} />

@@ -33,6 +33,9 @@ const SmartHeader = ({ state, actions, children }) => {
                     positionStates.BOTTOM : positionStates.MID)
         )
     }
+    const setStickyHeader = (current) => {
+        return (current > window.innerHeight)
+    }
     const setScrollDir = (current, prev) => {
         return (
             current == prev ? scrollDirStates.NONE :
@@ -46,7 +49,7 @@ const SmartHeader = ({ state, actions, children }) => {
 
         state.theme.scroll.position = setPosition( currentPos )
         state.theme.scroll.scrollDir = setScrollDir( currentPos , prevPos )
-
+        state.theme.scroll.stickyHeader = setStickyHeader( currentPos)
         actions.theme.scroll()
 
         state.theme.scroll.currentPos = currentPos
@@ -55,6 +58,7 @@ const SmartHeader = ({ state, actions, children }) => {
     const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 100)
 
     useEffect(() => {
+        handleDocumentScroll()
         window.addEventListener("scroll", handleDocumentScrollThrottled);
 
         return () => {
@@ -65,7 +69,11 @@ const SmartHeader = ({ state, actions, children }) => {
 
 
     return (
-        <div data-hide={state.theme.scroll.hide}>
+        <div
+            data-sticky={state.theme.scroll.stickyHeader}
+            data-hide={state.theme.scroll.hide}
+            data-pinned={state.theme.scroll.pinnedState == "pinned"}
+        >
             {children}
         </div>
     )
