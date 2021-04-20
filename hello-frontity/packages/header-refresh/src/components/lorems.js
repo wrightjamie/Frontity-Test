@@ -20,6 +20,7 @@ const Lorem = () => {
                 <i><Big>S</Big>mile - its </i> <EM>poo </EM>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad adipisci consequatur dignissimos dolorem, doloribus eaque enim excepturi facilis maiores modi nisi non numquam obcaecati placeat rem repudiandae sequi. Fugit?
             </p>
+            <p>Thomas is the best</p>
         </>
     )
 }

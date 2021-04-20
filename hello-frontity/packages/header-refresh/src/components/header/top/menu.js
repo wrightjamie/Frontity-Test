@@ -25,4 +25,5 @@ export default connect(Menu)
 
 const UL = styled.ul`
   list-style: none;
+  display:flex;
 `

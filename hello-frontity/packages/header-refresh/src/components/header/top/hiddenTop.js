@@ -7,9 +7,7 @@ const HiddenTop = ({ actions }) => {
     return (
         <>
             <Div>
-                <TopContainer>
-                    <Button onClick={actions.theme.tempShowHeaders} ><Icon icon="menu" size="1.5" /></Button>
-                </TopContainer>
+                <Button onClick={actions.theme.tempShowHeaders} ><Icon icon="menu" size="1.5" /></Button>
             </Div>
         </>
     )
@@ -23,7 +21,9 @@ const Div =styled.div`
     button:hover{
       color: var(--heading);
     }
-  
+
+  display: flex;
+  justify-content: flex-end;
     position: fixed;
     top: 0;
     left: 0;
@@ -34,11 +34,6 @@ const Div =styled.div`
       transform: translateY(-100%);
     }   
     `
-
-const TopContainer = styled(Container)`
-  display: flex;
-  justify-content: flex-end;
-`
 
 const Button = styled.button`
   padding: .5rem;
