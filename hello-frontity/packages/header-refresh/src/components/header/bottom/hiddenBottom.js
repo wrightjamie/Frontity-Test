@@ -23,6 +23,12 @@ const Div =styled.div`
     transform: translateY(0);
     transition: transform 1s ease;
     [data-hide="false"] & { transform: translateY(100%); }
+    &:hover button{
+      color: var(--heading);
+      &:hover{
+        color:var(--blue);
+      }
+    }
     `
 
 
@@ -34,7 +40,4 @@ const Button = styled.button`
   cursor: pointer;
   outline: none;
   border: none;
-  &:hover {
-    color: var(--heading)
-  }
 `

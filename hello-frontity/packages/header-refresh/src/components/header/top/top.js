@@ -6,6 +6,7 @@ import Menu from "./menu"
 import Link from "@frontity/components/link"
 import RAFAClogo from "./rafaclogo";
 import RAFroundel from "./rafroundel";
+import mq from "../../mq"
 
 const Top = (  ) => {
     return (
@@ -37,15 +38,34 @@ export default connect(Top)
 const A = styled.a`
   width:20rem;
   margin-left:auto;
+  #roundel { display:none;}
+  ${mq[0]}{
+    position:absolute;
+    left:.5rem;top:.5rem;
+    #roundel {
+      display:block; 
+      height: 4rem;
+    }
+    #logo {display:none;}
+  }
 `
 
 const FlexCont = styled.div`
   display: flex;
+  ${mq[0]} {
+    padding-left:4.5rem;
+    em {
+      display: none;
+    }
+  }
 `
 
 const MenuLinks = styled(FlexCont)`
   margin-left: auto;
   align-items:flex-end;
+  ${mq[0]} {
+    display:none;
+  }
 `
 
 const TopContainer = styled(Container)`
@@ -69,6 +89,6 @@ const Div =styled.div`
     transition: transform 1s ease;
 
     [data-hide="true"] & {
-      transform: translateY(-100%);
+      transform: translateY(min(-100%,-4.5rem));
     }   
     `

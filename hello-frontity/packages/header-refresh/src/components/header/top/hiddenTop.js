@@ -17,6 +17,7 @@ export default connect(HiddenTop)
 
 const Div =styled.div`
     color: var(--light);
+    &:hover button,
     a:hover,
     button:hover{
       color: var(--heading);
@@ -32,7 +33,7 @@ const Div =styled.div`
     transition: transform 1s ease;
    [data-hide="false"] & {
       transform: translateY(-100%);
-    }   
+    }
     `
 
 const Button = styled.button`
