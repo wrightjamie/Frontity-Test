@@ -12,7 +12,7 @@ const SocialLinks = ({ state , className}) => {
                 {state.theme.menus.social.map(([title, type, link], index) =>(
                     <li key={index}>
                         <Link link={link} title={title}>
-                            <Icon icon={type} size="1.5" />
+                            <Icon icon={type} size="1.5" sizeUnits="em"/>
                         </Link>
                     </li>
                 ))}
@@ -24,6 +24,8 @@ const SocialLinks = ({ state , className}) => {
 export default connect(SocialLinks)
 
 const UL = styled.ul`
+  padding: 0 .5rem;
   list-style: none;
   display:flex;
+  gap: .5em;
 `

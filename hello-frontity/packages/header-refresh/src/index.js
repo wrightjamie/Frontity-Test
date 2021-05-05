@@ -42,7 +42,6 @@ const myFirstTheme = {
       },
       modals: {
         search: false,
-        social: false,
         menu: false
       },
       scroll: {
@@ -69,6 +68,12 @@ const myFirstTheme = {
 
         const pinnedState = state.theme.scroll.pinnedState
         const dir = state.theme.scroll.scrollDir
+
+        //OverRide if a modal is shown:
+        if(state.theme.modals.menu){
+          state.theme.scroll.hide = false
+          return;
+        }
 
         switch (pinnedState) {
           case pinnedStates.TEMP: //Temporary shown
@@ -122,6 +127,14 @@ const myFirstTheme = {
         state.theme.scroll.pinnedState ="auto"
         actions.theme.scroll()
       },
+      toggleShowMenu: ({ state , actions }) => {
+        actions.theme.tempShowHeaders()
+        state.theme.modals.menu = !state.theme.modals.menu
+        console.log(state.theme.modals.menu)
+      },
+      closeOverlay: ({ }) => {
+        console.log("CloseOverlay")
+      }
     },
   },
   libraries: {

@@ -33,6 +33,9 @@ const Root = ({ state }) => {
                         --light: ${colors.light};
                         --accent: ${colors.accent};
                         
+                        --roundelSize: 4rem; //Magic Number for a nice size
+                        --logoWidth: 20rem; //Magic Number for the width
+                        
                         line-height:1.5;
                     }
                     a {

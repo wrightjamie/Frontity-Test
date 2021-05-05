@@ -1,8 +1,7 @@
 import React from "react"
 import { connect , styled , css } from "frontity";
 import Container from "../../helpers/container"
-import SocialLinks from "./socialLinks";
-import Menu from "./menu"
+import MenuLinks from "./menuLinks";
 import Link from "@frontity/components/link"
 import RAFAClogo from "./rafaclogo";
 import RAFroundel from "./rafroundel";
@@ -18,15 +17,12 @@ const Top = (  ) => {
                             <h1>2459 Sqn</h1>
                             <em>Poulton-le-Fylde</em>
                         </Link>
-                        <A href="http://www.raf.co.uk/aircadets" >
+                        <LogoLink href="http://www.raf.co.uk/aircadets" >
                             <RAFAClogo />
                             <RAFroundel />
-                        </A>
+                        </LogoLink>
                     </FlexCont>
-                    <MenuLinks>
-                        <SocialLinks />
-                        <Menu />
-                    </MenuLinks>
+                    <MenuLinks />
                 </TopContainer>
             </Div>
         </>
@@ -35,8 +31,8 @@ const Top = (  ) => {
 
 export default connect(Top)
 
-const A = styled.a`
-  width:20rem;
+const LogoLink = styled.a`
+  width: var(--logoWidth); //Magic Number to give a nice size
   margin-left:auto;
   #roundel { display:none;}
   ${mq[0]}{
@@ -44,7 +40,7 @@ const A = styled.a`
     left:.5rem;top:.5rem;
     #roundel {
       display:block; 
-      height: 4rem;
+      height: var(--roundelSize); //Magic Number for a nice size
     }
     #logo {display:none;}
   }
@@ -53,24 +49,22 @@ const A = styled.a`
 const FlexCont = styled.div`
   display: flex;
   ${mq[0]} {
-    padding-left:4.5rem;
+    padding-left:calc(var(--roundelSize) + 0.5rem);
     em {
       display: none;
     }
   }
 `
 
-const MenuLinks = styled(FlexCont)`
-  margin-left: auto;
-  align-items:flex-end;
-  ${mq[0]} {
-    display:none;
-  }
-`
-
 const TopContainer = styled(Container)`
+  padding: 0.5rem 1rem;
+  
   display: flex;
   flex-direction: column;
+  ${mq[0]}
+  {
+    flex-direction: row;
+  }
 `
 
 const Div =styled.div`
@@ -89,6 +83,10 @@ const Div =styled.div`
     transition: transform 1s ease;
 
     [data-hide="true"] & {
-      transform: translateY(min(-100%,-4.5rem));
+      transform: translateY(
+              min(
+                      -100%,
+                      calc( ( var(--roundelSize) + .5rem) * -1)
+              );
     }   
     `

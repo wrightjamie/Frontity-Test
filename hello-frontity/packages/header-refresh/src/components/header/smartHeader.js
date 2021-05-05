@@ -73,6 +73,7 @@ const SmartHeader = ({ state, actions, children }) => {
             data-sticky={state.theme.scroll.stickyHeader}
             data-hide={state.theme.scroll.hide}
             data-pinned={state.theme.scroll.pinnedState == "pinned"}
+            data-menu={state.theme.modals.menu}
         >
             {children}
         </div>

@@ -7,7 +7,7 @@ const HiddenTop = ({ actions }) => {
     return (
         <>
             <Div>
-                <Button onClick={actions.theme.tempShowHeaders} ><Icon icon="menu" size="1.5" /></Button>
+                <Button onClick={actions.theme.toggleShowMenu} ><Icon icon="menu" size="1.5" /></Button>
             </Div>
         </>
     )

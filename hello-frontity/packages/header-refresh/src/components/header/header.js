@@ -6,10 +6,10 @@ import SmartHeader from "./smartHeader";
 import HiddenBottom from "./bottom/hiddenBottom";
 import HiddenTop from "./top/hiddenTop";
 
-const Header = ({ }) => {
+const Header = ({ actions }) => {
     return (
         <SmartHeader>
-            <Overlay />
+            <Overlay onClick={actions.theme.toggleShowMenu} />
             <HiddenTop />
             <Top />
             <HiddenBottom />
@@ -27,4 +27,7 @@ const Overlay = styled.div`
   background: rgba(.2,.2,.2,0.5);
   backdrop-filter:blur(4px);
   left:-9999px;
+  [data-menu="true"] & {
+    left:0;
+  }
     `
