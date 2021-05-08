@@ -69,12 +69,13 @@ const Div = styled.div`
     width:80%;
     top:6rem;
     height: calc( 100vh - 15rem);
+    padding: 0.5rem;
 
     flex-direction:column;
     align-items: center;
 
     background: var(--dark);
-    font-size: 2rem;
+    font-size: 1.7rem;
 
 
     transform: translateX(-100%);

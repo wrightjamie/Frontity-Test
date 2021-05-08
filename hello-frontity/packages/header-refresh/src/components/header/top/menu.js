@@ -37,5 +37,8 @@ const UL = styled.ul`
     align-items: center;
     justify-content: space-between;
     flex-grow: 1;
+    li a{
+      border-right:none;
+    }
   }
 `

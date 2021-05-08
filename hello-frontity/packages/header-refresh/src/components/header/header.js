@@ -5,6 +5,7 @@ import Bottom from "./bottom/bottom";
 import SmartHeader from "./smartHeader";
 import HiddenBottom from "./bottom/hiddenBottom";
 import HiddenTop from "./top/hiddenTop";
+import mq from "../mq"
 
 const Header = ({ actions }) => {
     return (
@@ -21,6 +22,7 @@ const Header = ({ actions }) => {
 export default connect(Header)
 
 const Overlay = styled.div`
+  display:none;
   position: fixed;  
   top:0; bottom: 0;
   width:100%;
@@ -29,5 +31,8 @@ const Overlay = styled.div`
   left:-9999px;
   [data-menu="true"] & {
     left:0;
+  }
+  ${mq[0]} {
+    display:block;
   }
     `

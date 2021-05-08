@@ -87,6 +87,6 @@ const Div =styled.div`
               min(
                       -100%,
                       calc( ( var(--roundelSize) + .5rem) * -1)
-              );
+              ));
     }   
     `

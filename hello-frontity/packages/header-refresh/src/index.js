@@ -71,8 +71,8 @@ const myFirstTheme = {
 
         //OverRide if a modal is shown:
         if(state.theme.modals.menu){
-          state.theme.scroll.hide = false
-          return;
+          //state.theme.scroll.hide = false
+          //return;
         }
 
         switch (pinnedState) {

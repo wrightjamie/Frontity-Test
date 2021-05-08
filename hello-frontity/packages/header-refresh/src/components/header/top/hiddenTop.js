@@ -1,6 +1,5 @@
 import React from "react"
 import { connect , styled } from "frontity";
-import Container from "../../helpers/container"
 import Icon from "../icon";
 
 const HiddenTop = ({ actions }) => {
