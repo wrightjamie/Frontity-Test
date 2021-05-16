@@ -24,12 +24,49 @@ const List = ({ state , actions, libraries }) => {
                     </ Teaser>
                 )
             })}
+            <PrevNextNav>
+                {data.previous && (
+                    <button
+                        onClick={() => {
+                            actions.router.set(data.previous)
+                        }}
+                    >
+                        &#171; Prev
+                    </button>
+                )}
+                {data.next && (
+                    <button
+                        onClick={() => {
+                            actions.router.set(data.next)
+                        }}
+                    >
+                        Next &#187;
+                    </button>
+                )}
+            </PrevNextNav>
         </ >
     )
 }
 
 export default connect(List)
 
+const PrevNextNav = styled.div`
+  grid-column: span 1;
+  padding-top:1.5em;
+
+  & > button {
+    background: #eee;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    color: #888;
+    border: 1px solid #aaa;
+    font-size: 0.8em;
+    margin-right: 2em;
+  }
+  & > button:hover {
+    cursor: pointer;
+  }
+`
 
 const Teaser = styled(Card)`
     height: 25em;
